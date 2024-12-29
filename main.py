@@ -1,5 +1,4 @@
 import random
-import math
 
 N=None
 a=[N,N,N]
@@ -152,7 +151,7 @@ def minimax(act_table, is_maximizing):
         return 0 #('Победила дружба')
 
     if is_maximizing:
-        best_score = -math.inf
+        best_score = -10
         for row_i in range(3):
             for col_i in range(3):
                 if table[row_i][col_i] == N:
@@ -162,7 +161,7 @@ def minimax(act_table, is_maximizing):
                     best_score = max(score, best_score)
         return best_score
     else:
-        best_score = math.inf
+        best_score = 10
         for row_i in range(3):
             for col_i in range(3):
                 if act_table[row_i][col_i] == N:
@@ -174,7 +173,7 @@ def minimax(act_table, is_maximizing):
 
 def move():
     best_move = ()
-    best_score = -math.inf
+    best_score = -10
     indexes = ['a', 'b', 'c']
     for row_i in range(3):
         for col_i in range(3):
